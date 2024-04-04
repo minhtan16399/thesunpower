@@ -1,0 +1,452 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+#root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-size: 10px;
+    font-family: "Inter", sans-serif;
+}
+
+ul,
+li,
+a,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 414px) {
+
+    body,
+    html {
+        font-size: 5px;
+    }
+}
+
+.header {
+    background-color: rgba(0, 0, 0, 0.068);
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: white;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-brand {
+    font-size: 3rem;
+}
+
+.carousel {
+    background-image: linear-gradient(to bottom right, rgb(12, 14, 37), rgba(27, 44, 126, 1), rgb(56, 136, 255));
+    height: 69rem;
+    display: flex;
+    position: relative;
+}
+
+.carousel-content {
+    position: absolute;
+    width: 93%;
+    height: 50%;
+    z-index: 5;
+}
+
+.carousel-content span {
+    font-size: 6rem;
+    display: block;
+}
+
+.carousel img {
+    width: 70%;
+    height: auto;
+    filter: opacity(65%);
+}
+
+.detail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 401rem;
+}
+
+.detail-content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.detail-content-container {
+    height: 96%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detail-content-card {
+    background-color: #fffffff7;
+    border-radius: 2.5rem;
+    font-size: 1.5rem;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0.5rem 0.5rem #48474729;
+}
+
+.detail-content-card-items {
+    width: 70%;
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.detail-content-card-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    width: 50%;
+    text-align: center;
+}
+
+.detail-content-card-body {
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detail-content-card-body-items {
+    line-height: 6rem;
+}
+
+.detail-content-card-body-items h1 {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.detail-content-card-body-items h1 .fa-play {
+    color: #00cf03;
+}
+
+.content-line-height {
+    line-height: 3rem;
+}
+
+.form-input {
+    display: flex;
+    justify-content: center;
+}
+
+.form-input-custom {
+    border: 0.2rem solid #d7d5d5;
+    border-radius: 0.5rem;
+    width: 95%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    line-height: 2.5rem;
+}
+
+.form-input-custom input {
+    background-color: transparent;
+    width: 90%;
+    outline: none;
+}
+
+.form-input-custom span {
+    color: #fff;
+    background-color: #0048ff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.electric-type-option {
+    border-radius: 1.5rem;
+    background-color: #d6d6d6;
+    padding: 0.5rem 1.5rem;
+}
+
+.electric-usage-demand,
+.electric-usage-habit {
+    background-color: rgba(246, 246, 246, 0.727);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+    /* padding: 3rem; */
+}
+
+.electric-usage-demand-content,
+.electric-usage-habit-content {
+    width: 90%;
+    height: 90%;
+    /* line-height: 6rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.electric-usage-demand-content .content-line-height {
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: ; */
+}
+
+.electric-usage-habit-content .form-input .form-input-custom {
+    width: 100%;
+}
+
+.electric-usage-habit-content .form-input .form-input-custom textarea {
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+    outline: none;
+    background-color: transparent;
+}
+
+#BtnCapacityCalculation {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(75, 255, 153);
+    border-radius: 1rem;
+    font-weight: bold;
+    line-height: 5rem;
+}
+
+.result-table {
+    width: 100%;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+}
+
+.result-table th,
+td {
+    border: 0.2rem solid rgba(240, 240, 240, 0.897);
+    padding: 1rem;
+    text-align: start;
+}
+
+.result-table table {
+    width: 100%;
+    border-radius: 5rem;
+}
+
+.result-table th {
+    background-color: rgba(250, 250, 250, 0.897);
+    /* border-radius: 1.5rem; */
+}
+
+.result-table td {
+    width: 50%;
+}
+
+.detail-content hr {
+    /* border-top-style: ; */
+    border-top: 0.2rem dashed rgba(240, 240, 240, 0.979);
+}
+
+.demand-product-content {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.demand-product-content-item {
+    width: 25%;
+}
+
+.demand-product-content-item-option {
+    width: 100%;
+    border: 0.2rem solid rgba(240, 240, 240, 0.897);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.demand-product-content-item-option select {
+    outline: none;
+    width: 100%;
+}
+
+#BtnApplyDemandProduct {
+    width: 80%;
+    padding: 1rem;
+    text-align: center;
+    background-color: rgb(75, 255, 153);
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+.suggest-table table {
+    width: 100%;
+    box-shadow: 0 0 0.5rem 0rem #48474729;
+}
+
+.suggest-table th,
+td {
+    border: 0.1rem solid rgba(240, 240, 240, 0.897);
+    padding: 1rem;
+    text-align: start;
+    width: 20%;
+}
+
+.suggest-table th {
+    background-color: rgba(250, 250, 250, 0.897);
+    color: #9d9d9d;
+}
+
+.suggest-table td a {
+    color: #0048ff;
+}
+
+.contact-card {
+    background-color: #fffffff7;
+    border-radius: 1.5rem;
+    font-size: 1.5rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0.5rem 0rem #48474729;
+}
+
+.contact-card-content {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-card-content .content-line-height {
+    width: 45%;
+}
+
+.contact-card-content h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#BtnSendContact {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: rgb(75, 255, 153);
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+.detail-background-top {
+    background-image: linear-gradient(to bottom right, rgb(12, 14, 37), rgba(27, 44, 126, 1), rgb(56, 136, 255));
+    height: 17%;
+    width: 100%;
+}
+
+.detail-background-mid {
+    height: 60%;
+    width: 100%;
+}
+
+.detail-background-bot {
+    background-image: linear-gradient(to bottom, rgb(56, 136, 255), rgba(27, 44, 126, 1));
+    height: 25%;
+    width: 100%;
+    /* bottom: 0; */
+    /* position:absolute; */
+}
+
+.detail-content-info {
+    height: 13%;
+}
+
+.detail-content-info-item,
+.detail-content-info-item-left,
+.detail-content-info-item-right {
+    height: 100%;
+}
+
+.detail-content-info-item-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detail-content-info-item {
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.detail-content-info-item-left-background {
+    background-image: url(./../public/img/image3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90%;
+    height: 100%;
+    border-radius: 2.5%;
+    background-color: rgb(75, 255, 153);
+
+}
+
+.detail-content-info-item-left-background .background-image3 {
+    border-radius: 2.5%;
+    background-color: rgba(75, 255, 153, 0.142);
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    height: 20rem;
+    background-image: linear-gradient(to bottom,rgba(27, 44, 126, 1), rgb(12, 14, 37));
+    color: #fff;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer {
+    width: 85%;
+    height: 85%;
+    display: flex;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: end;
+}
+
+.footer-right-content {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
