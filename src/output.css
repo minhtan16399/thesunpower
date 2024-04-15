@@ -604,6 +604,10 @@ video {
   position: relative;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -838,6 +842,20 @@ p {
   line-height: 3rem;
 }
 
+#InputElectricMoney,
+#InputElectricKilo {
+  height: 100%;
+  transition: height 0s;
+  overflow: visible;
+}
+
+#InputElectricMoney.hide,
+#InputElectricKilo.hide {
+  height: 0;
+  transition: height 0s;
+  overflow: hidden;
+}
+
 .form-input {
   display: flex;
   justify-content: center;
@@ -880,8 +898,8 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 25rem;
-  /* padding: 3rem; */
+  /* height: 25rem; */
+  /* padding-bottom: 3rem; */
 }
 
 .electric-usage-demand-content,
@@ -899,6 +917,11 @@ p {
   display: flex;
   flex-direction: column;
   /* align-items: ; */
+}
+
+.electric-usage-demand-content .content-line-height .form-input-custom,
+.electric-usage-habit-content .content-line-height .form-input-custom {
+  background-color: #fff;
 }
 
 .electric-usage-habit-content .form-input .form-input-custom {
@@ -1108,7 +1131,7 @@ td {
 
 footer {
   height: 20rem;
-  background-image: linear-gradient(to bottom,rgba(27, 44, 126, 1), rgb(12, 14, 37));
+  background-image: linear-gradient(to bottom, rgba(27, 44, 126, 1), rgb(12, 14, 37));
   color: #fff;
   font-size: 1.8rem;
   display: flex;
@@ -1140,4 +1163,25 @@ footer .footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+#electricUsageDemand, #electricUsageHabit {
+  /* height: 200px; */
+  /* transition: height 1s, overflow 5s; */
+  overflow: visible;
+}
+
+#electricUsageDemand.hidden1, #electricUsageHabit.hidden1 {
+  height: 0;
+  overflow:hidden;
+}
+
+#iconAngleUpDemand.expand, #iconAngleUpHabit.expand {
+  transition: 0.5s;
+  rotate: 180deg;
+}
+
+#iconAngleUpDemand.collapse, #iconAngleUpHabit.collapse {
+  transition: 0.5s;
+  rotate: 0deg;
 }

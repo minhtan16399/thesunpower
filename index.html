@@ -9,12 +9,11 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="./src/output.css" rel="stylesheet">
-    <script type="module" src="./build/index.js"></script>
 </head>
 
 <body>
     <div id="root">
-        <header class="header fixed flex justify-center">
+        <header id="header" class="header fixed flex justify-center">
             <div class="w-10/12">
                 <div class="flex justify-between">
                     <div class="header-brand">
@@ -64,13 +63,14 @@
                                         <i class="fa-solid fa-play"></i>
                                         Số tiền điện hoặc số kilo điện (*)
                                     </h1>
-                                    <div class="content-line-height flex flex-col">
+                                    <div class="content-line-height flex flex-col" id="formInputNumberElectric">
                                         <div>
                                             <label class="container">
-                                                <input type="radio" checked="checked" name="electricNumber">
+                                                <input id="selectElectricMoney" type="radio" checked
+                                                    name="electricNumber">
                                                 <span class="checkmark">Số tiền điện</span>
                                             </label>
-                                            <div id="InputElectricMoney" class="form-input" style="display: none;">
+                                            <div id="InputElectricMoney" class="form-input">
                                                 <div class="form-input-custom">
                                                     <input type="text" placeholder="Nhập số tiền điện">
                                                     <span>đ</span>
@@ -79,10 +79,10 @@
                                         </div>
                                         <div>
                                             <label class="container">
-                                                <input type="radio" name="electricNumber">
+                                                <input id="selectElectricKilo" type="radio" name="electricNumber">
                                                 <span class="checkmark">Số kilo điện</span>
                                             </label>
-                                            <div id="InputElectricKilo" class="form-input" style="display: none;">
+                                            <div id="InputElectricKilo" class="form-input">
                                                 <div class="form-input-custom">
                                                     <input type="text" placeholder="Nhập số kilo điện">
                                                     <span>kW</span>
@@ -98,21 +98,21 @@
                                     </h1>
                                     <div class="flex flex-col content-line-height">
                                         <label class="container">
-                                            <input type="radio" checked="checked" name="radio">
+                                            <input type="radio" checked name="TypeOfUser">
                                             <span class="checkmark">Hộ gia đình, Hộ kinh doanh, Cơ sở sản xuất</span>
                                         </label>
                                         <label class="container">
-                                            <input type="radio" name="radio">
+                                            <input type="radio" name="TypeOfUser">
                                             <span class="checkmark">Bệnh viện, Nhà trẻ, Mẫu giáo, Trường phổ
                                                 thông</span>
                                         </label>
                                         <label class="container">
-                                            <input type="radio" name="radio">
+                                            <input type="radio" name="TypeOfUser">
                                             <span class="checkmark">Chiếu sáng công cộng, Đơn vị hành chính sự
                                                 nghiệp</span>
                                         </label>
                                         <label class="container">
-                                            <input type="radio" name="radio">
+                                            <input type="radio" name="TypeOfUser">
                                             <span class="checkmark">Công ty kinh doanh, Công ty sản xuất</span>
                                         </label>
                                     </div>
@@ -122,13 +122,13 @@
                                         <i class="fa-solid fa-play"></i>
                                         Loại mạng điện (*)
                                     </h1>
-                                    <div class="flex content-line-height">
+                                    <div class="flex content-line-height" id="typeOfElectric">
                                         <div class="flex flex-col">
                                             <div>
                                                 <span class="electric-type-option">1 pha</span>
                                             </div>
                                             <label class="container">
-                                                <input type="radio" checked="checked" name="radio">
+                                                <input type="radio" checked name="TypeOfElectric">
                                                 <span class="checkmark">220v</span>
                                             </label>
                                         </div>
@@ -146,13 +146,13 @@
                                             </div>
                                             <div>
                                                 <label class="container">
-                                                    <input type="radio" name="radio">
+                                                    <input type="radio" name="TypeOfElectric" id="threePhasePower">
                                                     <span class="checkmark">3 pha kinh doanh</span>
                                                 </label>
-                                                <div class="flex justify-center">
+                                                <div class="hidden justify-center" id="optionThreePhasePower">
                                                     <div class="flex flex-col w-4/5">
                                                         <label>
-                                                            <input type="radio" name="optionKilo">
+                                                            <input type="radio" checked name="optionKilo">
                                                             <span>380v</span>
                                                         </label>
                                                         <label>
@@ -175,7 +175,7 @@
                                                 </div>
                                             </div>
                                             <label class="container">
-                                                <input type="radio" name="radio">
+                                                <input type="radio" name="TypeOfElectric">
                                                 <span class="checkmark">3 pha sản xuất</span>
                                             </label>
                                         </div>
@@ -189,77 +189,84 @@
                                                     <i class="fa-solid fa-play"></i>
                                                     Nhu cầu sử dụng điện
                                                 </h1>
-                                                <button>Rút gọn <i class="fa-solid fa-angle-up"></i></button>
-                                            </div>
-                                            <div class="flex">
-                                                <div class="content-line-height">
-                                                    <span>Ban ngày</span>
-                                                    <div class="form-input">
-                                                        <div class="form-input-custom">
-                                                            <input type="text" placeholder="Nhập %">
-                                                            <span>%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div style="width: 15%;
-                                            display: flex;
-                                            justify-content: center;
-                                            align-items: center;">
-                                                    <span style="border: 1px solid #ebebeb;
-                                                border-radius: 0.5rem;
-                                                height: 80%;"></span>
-                                                </div>
-                                                <div class="content-line-height">
-                                                    <span>Ban đêm</span>
-                                                    <div class="form-input">
-                                                        <div class="form-input-custom">
-                                                            <input type="text" placeholder="Nhập %">
-                                                            <span>%</span>
-                                                        </div>
-                                                    </div>
+                                                <div>
+                                                    <button id="btnCollapseDemand">Rút gọn</button>
+                                                    <i class="fa-solid fa-angle-up" id="iconAngleUpDemand"></i>
                                                 </div>
                                             </div>
-                                            <div class="flex">
-                                                <div class="content-line-height">
-                                                    <span>Giờ cao điểm</span>
-                                                    <div class="form-input">
-                                                        <div class="form-input-custom">
-                                                            <input type="text" placeholder="Nhập %">
-                                                            <span>%</span>
+                                            <div id="electricUsageDemand">
+                                                <div class="mb-5">
+                                                    <div class="flex">
+                                                        <div class="content-line-height">
+                                                            <span>Ban ngày</span>
+                                                            <div class="form-input">
+                                                                <div class="form-input-custom">
+                                                                    <input type="text" placeholder="Nhập %">
+                                                                    <span>%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div style="width: 15%;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;">
+                                                            <span style="border: 1px solid #ebebeb;
+                                                        border-radius: 0.5rem;
+                                                        height: 80%;"></span>
+                                                        </div>
+                                                        <div class="content-line-height">
+                                                            <span>Ban đêm</span>
+                                                            <div class="form-input">
+                                                                <div class="form-input-custom">
+                                                                    <input type="text" placeholder="Nhập %">
+                                                                    <span>%</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div style="width: 15%;
-                                            display: flex;
-                                            justify-content: center;
-                                            align-items: center;">
-                                                    <span style="border: 1px solid #ebebeb;
-                                                border-radius: 0.5rem;
-                                                height: 80%;"></span>
-                                                </div>
-                                                <div class="content-line-height">
-                                                    <span>Giờ thấp điểm</span>
-                                                    <div class="form-input">
-                                                        <div class="form-input-custom">
-                                                            <input type="text" placeholder="Nhập %">
-                                                            <span>%</span>
+                                                    <div class="flex">
+                                                        <div class="content-line-height">
+                                                            <span>Giờ cao điểm</span>
+                                                            <div class="form-input">
+                                                                <div class="form-input-custom">
+                                                                    <input type="text" placeholder="Nhập %">
+                                                                    <span>%</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div style="width: 15%;
-                                            display: flex;
-                                            justify-content: center;
-                                            align-items: center;">
-                                                    <span style="border: 1px solid #ebebeb;
-                                                border-radius: 0.5rem;
-                                                height: 80%;"></span>
-                                                </div>
-                                                <div class="content-line-height">
-                                                    <span>Giờ bình thường</span>
-                                                    <div class="form-input">
-                                                        <div class="form-input-custom">
-                                                            <input type="text" placeholder="Nhập %">
-                                                            <span>%</span>
+                                                        <div style="width: 15%;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;">
+                                                            <span style="border: 1px solid #ebebeb;
+                                                        border-radius: 0.5rem;
+                                                        height: 80%;"></span>
+                                                        </div>
+                                                        <div class="content-line-height">
+                                                            <span>Giờ thấp điểm</span>
+                                                            <div class="form-input">
+                                                                <div class="form-input-custom">
+                                                                    <input type="text" placeholder="Nhập %">
+                                                                    <span>%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div style="width: 15%;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;">
+                                                            <span style="border: 1px solid #ebebeb;
+                                                        border-radius: 0.5rem;
+                                                        height: 80%;"></span>
+                                                        </div>
+                                                        <div class="content-line-height">
+                                                            <span>Giờ bình thường</span>
+                                                            <div class="form-input">
+                                                                <div class="form-input-custom">
+                                                                    <input type="text" placeholder="Nhập %">
+                                                                    <span>%</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -275,15 +282,20 @@
                                                     <i class="fa-solid fa-play"></i>
                                                     Thói quen sử dụng điện
                                                 </h1>
-                                                <button>Rút gọn <i class="fa-solid fa-angle-up"></i></button>
+                                                <div>
+                                                    <button id="btnCollapseHabit">Rút gọn</button>
+                                                    <i class="fa-solid fa-angle-up" id="iconAngleUpHabit"></i>
+                                                </div>
                                             </div>
-                                            <div class="electric-usage-habit-content-desc">
-                                                <div class="content-line-height">
-                                                    <span>Mô tả</span>
-                                                    <div class="form-input">
-                                                        <div class="form-input-custom">
-                                                            <textarea name="desc" id="Desc" cols="30" rows="5"
-                                                                placeholder="Nhập mô tả. Ví dụ (Sử dụng máy lạnh nhiều vào ban ngày ...)"></textarea>
+                                            <div id="electricUsageHabit">                                              
+                                                <div class="electric-usage-habit-content-desc mb-5">
+                                                    <div class="content-line-height">
+                                                        <span>Mô tả</span>
+                                                        <div class="form-input">
+                                                            <div class="form-input-custom">
+                                                                <textarea name="desc" id="Desc" cols="30" rows="5"
+                                                                    placeholder="Nhập mô tả. Ví dụ (Sử dụng máy lạnh nhiều vào ban ngày ...)"></textarea>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -543,6 +555,8 @@
             </div>
         </footer>
     </div>
+    <script type="module" src="./build/index.js"></script>
+
 </body>
 
 </html>
